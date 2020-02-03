@@ -1,15 +1,25 @@
-import { Component } from '@angular/core';
+import {Component, HostBinding } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { OverlayContainer} from '@angular/cdk/overlay';
+import {ThemeSwitcherComponent} from './Compinents/theme-switcher/theme-switcher.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent  {}
+export class AppComponent {
+
+constructor(
+    public themeSwitch: ThemeSwitcherComponent
+ ){}
+
+// call theme switch on init
+ngOnInit(){
+  this.themeSwitch.setDefaultTheme();
+}
+} 
 
 
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
+
+

@@ -1,0 +1,50 @@
+//include material theming
+@import '~@angular/material/theming';
+@include mat-core();
+
+
+// Define the light theme
+$light-app-primary: mat-palette($mat-indigo);
+$light-app-accent:  mat-palette($mat-pink, A500, A100, A400);
+$light-app-theme:   mat-light-theme($light-app-primary, $light-app-accent);
+
+// Include the light theme styles.
+@include angular-material-theme($light-app-theme);
+
+
+
+
+// themes will be switched based on class names, angular will switch classes which will trigger the theme change
+.dark-theme{
+  // Define an dark theme.
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+  @include angular-material-theme($dark-theme);
+ 
+}
+
+
+
+.light-blue-theme {
+  $light-blue-primary: mat-palette($mat-light-blue, 500,700,800);
+  $light-blue-accent:  mat-palette($mat-green, A200);
+
+  $light-blue-theme: mat-light-theme($light-blue-primary, $light-blue-accent);
+
+  @include angular-material-theme($light-blue-theme);
+}
+
+.lime-theme {
+  $lime-primary: mat-palette($mat-lime, 500,700,800);
+  $lime-accent:  mat-palette($mat-blue-grey, A200);
+
+  $lime-theme: mat-light-theme($lime-primary, $lime-accent);
+
+  @include angular-material-theme($lime-theme);
+}
+
+
+
+  

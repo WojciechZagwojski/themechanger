@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-theme.component.css']
 })
 export class CreateThemeComponent implements OnInit {
+  isToggled: boolean;
+
+toggleState() {
+  this.isToggled = !this.isToggled;
+}
 
   constructor() { }
 
@@ -13,7 +18,8 @@ export class CreateThemeComponent implements OnInit {
   }
 
   saveTheme() {
-
+  const div = document.querySelector('div');
+    
   }
 
 }

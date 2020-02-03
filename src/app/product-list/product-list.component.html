@@ -1,15 +1,6 @@
 <h2>Themes</h2>
 
-<div *ngFor="let theme of theme">
 
-  <h3>
-    <a [title]="theme.name + ' details'">
-      {{ theme.name }}
-    </a>
-  </h3>
-
-  <p *ngIf="theme.description">
-    Description: {{ theme.description }}
-  </p>
-
-</div>
+<button mat-raised-button color="primary" (click)="onSetTheme('default-theme')">Default</button>
+<button mat-raised-button color="primary" (click)="onSetTheme('dark-theme')">Dark</button>
+<button mat-raised-button color="primary" (click)="onSetTheme('light-theme')">Light</button>

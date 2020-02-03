@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input, HostBinding } from '@angular/core';
 
 import { themes } from '../themes';
+import { AppComponent } from '../app.component'
+import { OverlayContainer} from '@angular/cdk/overlay';
+
 
 @Component({
   selector: 'app-product-list',
@@ -8,11 +11,21 @@ import { themes } from '../themes';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent {
-  theme = themes;
 
-  share() {
-    window.alert('The product has been shared!');
+  constructor(public overlayContainer: OverlayContainer) {}
+
+  @HostBinding('class') componentCssClass;
+  
+
+  onSetTheme(theme) {
+    document.getElementById('themeTag').classList.remove("light-theme", "dark-theme", "default-theme");
+    document.getElementById('themeTag').classList.add(theme);
+    console.log(document.getElementById('themeTag').classList)
+    
+    
   }
+
+
 }
 
 

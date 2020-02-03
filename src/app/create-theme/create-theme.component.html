@@ -10,8 +10,8 @@
       <input igxInput name="fontFamily" type="text" /> 
     </div>
     <div class="col-xs-4">
-      <label igxLabel for="fontSize">fontSize:</label>
-      <input igxInput name="fontSize" type="text" />
+      <label mat-label igxLabel for="fontSize">fontSize:</label>
+      <input mat-input igxInput name="fontSize" type="text" />
     </div>
     <div class="col-xs-4">
       <label igxLabel for="btnHeight">btnHeight:</label>
@@ -21,8 +21,7 @@
       <label igxLabel for="btnColor">btnColor:</label>
       <input igxInput name="btnColor" type="text" />
     </div>
-    <div class="col-xs-4">
-      <button mat-button (click)="saveTheme()">Save</button>
+    <div class="col-xs-4" >
+      <button mat-raised-button color="accent" (click)="saveTheme()">Save</button>
     </div>
-    </div>
-    
+
